@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Button from './Button';
 
 const ResumeSection = () => {
   const experiences = [
@@ -129,14 +130,12 @@ const ResumeSection = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <a 
+          <Button 
             href="/resume.pdf" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center"
+            download={true}
           >
             Download Full Resume
-          </a>
+          </Button>
         </motion.div>
       </div>
     </section>

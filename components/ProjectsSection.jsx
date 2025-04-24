@@ -70,7 +70,7 @@ const ProjectsSection = () => {
           className="text-center mt-12"
         >
           <a 
-            href="https://github.com/RiturajDebnath" 
+            href="https://github.com/Rituraj-Debnath" 
             className="btn-secondary inline-flex items-center"
             target="_blank"
             rel="noopener noreferrer"

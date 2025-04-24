@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
 
+/* In globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,5 +81,45 @@ h1, h2, h3, h4, h5, h6 {
 
   .section-divider {
     @apply w-20 h-1 bg-black dark:bg-white rounded-full mx-auto my-6;
+  }
+}
+
+/* Add these styles for dark mode transitions */
+html {
+  transition: background-color 0.3s ease;
+}
+
+/* Add these utility classes for navigation links */
+@layer components {
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors;
+  }
+  
+  .nav-link-mobile {
+    @apply block py-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors;
+  }
+  
+  .container-padding {
+    @apply px-6 md:px-12;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold text-gray-900 dark:text-white;
+  }
+  
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold text-gray-900 dark:text-white;
   }
 }

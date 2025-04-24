@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import Button from './Button';
+import { FaLinkedin } from 'react-icons/fa'; // Import LinkedIn icon
 
 const HeroSection = () => {
   return (
@@ -44,22 +46,18 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            <a 
-              href="/resume.pdf" 
-              download
-              className="btn-primary"
+            {/* LinkedIn Button - Now using the same styling as Contact Me */}
+            <Button 
+              href="https://www.linkedin.com/in/rituraj-debnath-168540204/" 
             >
-              Download Resume
-            </a>
-            <Link 
-              href="#contact" 
-              className="btn-secondary"
-            >
-              Contact Me
-            </Link>
+              <span className="bg-[#0077B5] p-1 rounded-sm mr-2 flex items-center justify-center">
+                <FaLinkedin className="text-white" />
+              </span> 
+              Connect on LinkedIn
+            </Button>
+            
+            <Button href="#contact">Contact Me</Button>
           </motion.div>
-          
-          {/* Removed the scroll indicator animation */}
         </div>
       </div>
     </section>

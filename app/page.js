@@ -7,7 +7,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ResumeDownloadSection from '@/components/ResumeDownloadSection';
 import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
+import Footer from '@/components/Footer'; // Remove this import
 import Header from '@/components/Header';
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <CertificationsSection />
       <ResumeDownloadSection />
       <ContactSection />
-      <Footer />
+      {/* Remove the Footer component from here */}
     </main>
   );
 }

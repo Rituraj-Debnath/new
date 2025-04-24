@@ -5,12 +5,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // Changed from 'media' to 'class' for manual dark mode toggle
+  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
+      // Your theme extensions here
     },
   },
   plugins: [],

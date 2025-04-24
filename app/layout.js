@@ -1,14 +1,10 @@
-import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { ThemeScript } from './theme-script';
+import { Inter } from 'next/font/google';
+import Footer from '../components/Footer';
+import StyledComponentsRegistry from './registry'; // This file is missing
+import { ThemeProvider } from '../context/ThemeContext';
 
-// Initialize the Space Grotesk font
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Rituraj Debnath - Portfolio',
@@ -17,14 +13,35 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`scroll-smooth ${spaceGrotesk.variable}`}>
+    <html lang="en">
       <head>
-        <ThemeScript />
+        {/* Script to prevent flash of wrong theme */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              try {
+                const savedTheme = localStorage.getItem('theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {
+                console.error('Theme initialization failed:', e);
+              }
+            })();
+          `
+        }} />
       </head>
-      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className={inter.className}>
+        <StyledComponentsRegistry>
+          <ThemeProvider>
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
