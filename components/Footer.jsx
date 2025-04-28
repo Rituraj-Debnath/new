@@ -36,7 +36,7 @@ const Footer = () => {
               <FaLinkedin className="text-2xl" />
             </a>
             <a 
-              href="https://medium.com/@rituraj-debnath-03" 
+              href="https://medium.com/@rituraj-debnath-2003" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
